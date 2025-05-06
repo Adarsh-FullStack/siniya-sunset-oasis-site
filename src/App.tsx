@@ -12,6 +12,7 @@ import Story from "./pages/Story";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { WaveFooter } from "./components/WaveFooter";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout><Index /></Layout>} />
+          <Route path="/" element={<Layout hideFooter={true}><Index /></Layout>} />
           <Route path="/property-details" element={<Layout><PropertyDetails /></Layout>} />
           <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
           <Route path="/story" element={<Layout><Story /></Layout>} />

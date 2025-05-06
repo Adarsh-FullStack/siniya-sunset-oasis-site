@@ -8,6 +8,8 @@ import { Amenities } from '../components/Amenities';
 import { Gallery } from '../components/Gallery';
 import { LocationSection } from '../components/LocationSection';
 import { ContactCTA } from '../components/ContactCTA';
+import { FAQ } from '../components/FAQ';
+import { WaveFooter } from '../components/WaveFooter';
 
 const Index = () => {
   useEffect(() => {
@@ -37,7 +39,7 @@ const Index = () => {
   }, []);
   
   return (
-    <>
+    <div className="relative overflow-hidden">
       <Hero />
       <Features />
       <Amenities />
@@ -45,8 +47,10 @@ const Index = () => {
       <Testimonials />
       <LocationSection />
       <PricingTeaser />
+      <FAQ />
       <ContactCTA />
-    </>
+      <WaveFooter />
+    </div>
   );
 };
 

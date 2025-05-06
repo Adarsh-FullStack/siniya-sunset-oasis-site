@@ -3,17 +3,24 @@ import { ArrowRight, Waves } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ParallaxBackground } from './ui/ParallaxBackground';
 import { BubbleEffect } from './ui/BubbleEffect';
+import { AquaHeroRipple } from './ui/AquaHeroRipple';
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden" id="hero">
-      {/* Enhanced water-themed background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sunset-dark via-sunset-purple to-[#0EA5E9] bg-animate z-0" />
+      {/* Enhanced water-themed background with image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1600&q=60" 
+          alt="Ocean background" 
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-sunset-dark via-sunset-purple to-[#0EA5E9] opacity-80 mix-blend-multiply"></div>
+      </div>
       
-      {/* Background image with parallax effect */}
+      {/* Background with parallax effect */}
       <ParallaxBackground 
         className="z-5" 
-        backgroundImage="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=60" 
         opacity={0.15}
       />
       
@@ -28,6 +35,9 @@ export const Hero = () => {
         count={40} 
         colors={["rgba(255, 255, 255, 0.3)", "rgba(51, 195, 240, 0.4)", "rgba(209, 213, 219, 0.3)"]}
       />
+      
+      {/* Water ripple effect */}
+      <AquaHeroRipple />
       
       {/* Enhanced content with animations */}
       <div className="container-custom relative z-30">

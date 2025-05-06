@@ -7,9 +7,10 @@ import { WhatsAppButton } from './WhatsAppButton';
 
 interface LayoutProps {
   children: React.ReactNode;
+  hideFooter?: boolean;
 }
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ children, hideFooter = false }: LayoutProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const [activeSection, setActiveSection] = useState('');
@@ -23,6 +24,7 @@ export const Layout = ({ children }: LayoutProps) => {
     { name: 'Testimonials', href: '/#testimonials' },
     { name: 'Location', href: '/#location' },
     { name: 'Pricing', href: '/#pricing' },
+    { name: 'FAQ', href: '/#faq' },
     { name: 'Contact', href: '/#contact-cta' },
   ];
 
@@ -109,10 +111,10 @@ export const Layout = ({ children }: LayoutProps) => {
                 key={item.name}
                 to={item.href}
                 onClick={(e) => handleAnchorClick(e, item.href)}
-                className={`text-sm transition-colors hover:text-sunset-orange relative ${
-                  isActive(item.href) ? 'text-sunset-orange' : 'text-white/80'
+                className={`text-sm transition-colors hover:text-[#33C3F0] relative ${
+                  isActive(item.href) ? 'text-[#33C3F0]' : 'text-white/80'
                 }
-                ${isActive(item.href) ? 'after:content-[""] after:absolute after:w-full after:h-0.5 after:bg-sunset-orange after:bottom-[-10px] after:left-0' : ''}
+                ${isActive(item.href) ? 'after:content-[""] after:absolute after:w-full after:h-0.5 after:bg-[#33C3F0] after:bottom-[-10px] after:left-0' : ''}
                 `}
               >
                 {item.name}
@@ -139,7 +141,7 @@ export const Layout = ({ children }: LayoutProps) => {
                   to={item.href}
                   onClick={(e) => handleAnchorClick(e, item.href)}
                   className={`block py-2 text-base ${
-                    isActive(item.href) ? 'text-sunset-orange' : 'text-white/80'
+                    isActive(item.href) ? 'text-[#33C3F0]' : 'text-white/80'
                   }`}
                 >
                   {item.name}
@@ -154,7 +156,7 @@ export const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       
-      <Footer />
+      {!hideFooter && <Footer />}
       <WhatsAppButton />
     </div>
   );
