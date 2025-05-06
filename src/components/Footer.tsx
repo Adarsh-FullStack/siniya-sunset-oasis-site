@@ -1,6 +1,5 @@
-
 import { Link } from 'react-router-dom';
-import { Phone, Mail, WhatsApp, MapPin } from 'lucide-react';
+import { Phone, Mail, MessageSquare, MapPin } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -78,7 +77,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center text-sunset-light/70 hover:text-sunset-orange transition-colors"
                 >
-                  <WhatsApp className="h-5 w-5 mr-2" />
+                  <MessageSquare className="h-5 w-5 mr-2" />
                   WhatsApp Chat
                 </a>
               </li>
