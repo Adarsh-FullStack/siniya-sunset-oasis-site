@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
 
-## Project info
+# Siniya Island by Sobha - Luxury Island Property Website
 
-**URL**: https://lovable.dev/projects/982a9aca-e948-4b58-8a2a-3bb06d383e11
+A stunning sunset-themed luxury property website for Siniya Island by Sobha, featuring elegant design, smooth animations, and responsive layout.
 
-## How can I edit this code?
+## Key Features
 
-There are several ways of editing your application.
+- Responsive design with elegant sunset theme
+- Animated gradient backgrounds
+- Interactive components including image sliders and parallax effects
+- Smooth scroll animations and transitions
+- Complete property information across multiple pages
+- Contact form with validation
 
-**Use Lovable**
+## Technologies Used
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/982a9aca-e948-4b58-8a2a-3bb06d383e11) and start prompting.
+- React with TypeScript
+- Vite for fast development and building
+- Tailwind CSS for styling
+- React Router for navigation
+- Lucide Icons for beautiful iconography
+- React Query for potential data fetching
 
-Changes made via Lovable will be committed automatically to this repo.
+## Project Structure
 
-**Use your preferred IDE**
+```
+src/
+├── components/       # Reusable UI components
+│   ├── Gallery/      # Gallery related components
+│   ├── ui/           # Shared UI components
+│   └── ...
+├── pages/            # Page components
+│   ├── Index.tsx     # Home page
+│   ├── PropertyDetails.tsx
+│   └── ...
+├── App.tsx           # Main app component with routes
+└── index.css         # Global styles
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository
+2. Install dependencies:
+```bash
+npm install
+```
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Build for production:
+```bash
+npm run build
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Deploy Instructions
 
-**Use GitHub Codespaces**
+This project can be easily deployed to platforms like Vercel or Netlify:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Vercel
+1. Import your GitHub repository
+2. Configure build settings (usually auto-detected)
+3. Deploy
 
-## What technologies are used for this project?
+### Netlify
+1. Connect to your GitHub repository
+2. Configure build command: `npm run build`
+3. Configure publish directory: `dist`
+4. Deploy
 
-This project is built with:
+## Credits
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Fonts: Playfair Display (headings) and Inter (body text)
+- Icons: Lucide React
+- Images: Placeholder images from Unsplash
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/982a9aca-e948-4b58-8a2a-3bb06d383e11) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License.

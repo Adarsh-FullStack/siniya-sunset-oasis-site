@@ -1,13 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from 'react';
+import { Hero } from '../components/Hero';
+import { Features } from '../components/Features';
+import { PricingTeaser } from '../components/Pricing';
 
 const Index = () => {
+  useEffect(() => {
+    // Scroll reveal animation
+    const handleScroll = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      
+      reveals.forEach((reveal) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveal.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+          reveal.classList.add('active');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    // Trigger once on mount
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Hero />
+      <Features />
+      <PricingTeaser />
+    </>
   );
 };
 
