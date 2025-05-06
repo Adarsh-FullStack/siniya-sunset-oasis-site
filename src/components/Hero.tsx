@@ -6,24 +6,28 @@ import { BubbleEffect } from './ui/BubbleEffect';
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden" id="hero">
       {/* Enhanced water-themed background */}
       <div className="absolute inset-0 bg-gradient-to-br from-sunset-dark via-sunset-purple to-[#0EA5E9] bg-animate z-0" />
+      
+      {/* Background image with parallax effect */}
+      <ParallaxBackground 
+        className="z-5" 
+        backgroundImage="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=60" 
+        opacity={0.15}
+      />
       
       {/* Animated wave pattern overlay */}
       <div className="absolute inset-0 opacity-30 z-10">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSI4IiBmaWxsPSJub25lIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIuMiIgc3Ryb2tlLXdpZHRoPSIuNSIgZD0iTTAgNCBTIDQgOCwgOCA0LCAxNiA4IiBmaWxsPSJub25lIiAvPjwvc3ZnPg==')] animate-gradient-x"></div>
       </div>
       
-      {/* Enhanced parallax background effect */}
-      <ParallaxBackground className="z-20" />
-      
-      {/* New bubble animation effect */}
-      <BubbleEffect className="z-15" />
-      
-      {/* Enhanced image background */}
-      <div className="absolute inset-0 bg-cover bg-center opacity-10 z-5" 
-           style={{backgroundImage: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=60')"}} />
+      {/* Enhanced bubble colors */}
+      <BubbleEffect 
+        className="z-15" 
+        count={40} 
+        colors={["rgba(255, 255, 255, 0.3)", "rgba(51, 195, 240, 0.4)", "rgba(209, 213, 219, 0.3)"]}
+      />
       
       {/* Enhanced content with animations */}
       <div className="container-custom relative z-30">

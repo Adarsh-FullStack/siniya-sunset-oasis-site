@@ -3,9 +3,15 @@ import { useEffect, useRef } from 'react';
 
 interface ParallaxBackgroundProps {
   className?: string;
+  backgroundImage?: string;
+  opacity?: number;
 }
 
-export const ParallaxBackground = ({ className }: ParallaxBackgroundProps) => {
+export const ParallaxBackground = ({ 
+  className, 
+  backgroundImage,
+  opacity = 0.2 
+}: ParallaxBackgroundProps) => {
   const backgroundRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -20,8 +26,8 @@ export const ParallaxBackground = ({ className }: ParallaxBackgroundProps) => {
       const y = (clientY / innerHeight) * 100;
       
       // Create subtle movement (only a few pixels)
-      const moveX = ((x - 50) * 0.05).toFixed(2);
-      const moveY = ((y - 50) * 0.05).toFixed(2);
+      const moveX = ((x - 50) * 0.1).toFixed(2);
+      const moveY = ((y - 50) * 0.1).toFixed(2);
       
       backgroundRef.current.style.transform = `translate(${moveX}px, ${moveY}px)`;
     };
@@ -36,7 +42,13 @@ export const ParallaxBackground = ({ className }: ParallaxBackgroundProps) => {
   return (
     <div 
       ref={backgroundRef}
-      className={`absolute inset-0 z-0 transition-transform duration-300 ease-out ${className}`}
+      className={`absolute inset-0 z-0 transition-transform duration-500 ease-out ${className}`}
+      style={backgroundImage ? {
+        backgroundImage: `url('${backgroundImage}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: opacity
+      } : undefined}
     >
       {/* Enhanced Particles */}
       <div className="absolute inset-0 overflow-hidden opacity-30">

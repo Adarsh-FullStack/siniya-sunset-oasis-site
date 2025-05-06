@@ -4,9 +4,14 @@ import { useEffect, useRef } from 'react';
 interface BubbleEffectProps {
   className?: string;
   count?: number;
+  colors?: string[];
 }
 
-export const BubbleEffect = ({ className = "", count = 25 }: BubbleEffectProps) => {
+export const BubbleEffect = ({ 
+  className = "", 
+  count = 25, 
+  colors = ["rgba(255, 255, 255, 0.3)", "rgba(51, 195, 240, 0.3)"] 
+}: BubbleEffectProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -29,16 +34,20 @@ export const BubbleEffect = ({ className = "", count = 25 }: BubbleEffectProps) 
       // Random animation delay
       const animationDelay = Math.random() * 5;
       
+      // Random color from colors array
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      
       // Random opacity between 0.1 and 0.3
       const opacity = Math.random() * 0.2 + 0.1;
       
       // Apply styles
-      bubble.className = 'absolute rounded-full bg-white';
+      bubble.className = 'absolute rounded-full';
       Object.assign(bubble.style, {
         width: `${size}px`,
         height: `${size}px`,
         left: `${left}%`,
         bottom: '-50px',
+        backgroundColor: color,
         opacity: opacity.toString(),
         animation: `float-up ${animationDuration}s ease-in-out ${animationDelay}s infinite`
       });
@@ -52,7 +61,7 @@ export const BubbleEffect = ({ className = "", count = 25 }: BubbleEffectProps) 
         container.innerHTML = '';
       }
     };
-  }, [count]);
+  }, [count, colors]);
   
   return (
     <div 

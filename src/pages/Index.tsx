@@ -3,6 +3,11 @@ import { useEffect } from 'react';
 import { Hero } from '../components/Hero';
 import { Features } from '../components/Features';
 import { PricingTeaser } from '../components/Pricing';
+import { Testimonials } from '../components/Testimonials';
+import { Amenities } from '../components/Amenities';
+import { Gallery } from '../components/Gallery';
+import { LocationSection } from '../components/LocationSection';
+import { ContactCTA } from '../components/ContactCTA';
 
 const Index = () => {
   useEffect(() => {
@@ -35,7 +40,12 @@ const Index = () => {
     <>
       <Hero />
       <Features />
+      <Amenities />
+      <Gallery />
+      <Testimonials />
+      <LocationSection />
       <PricingTeaser />
+      <ContactCTA />
     </>
   );
 };

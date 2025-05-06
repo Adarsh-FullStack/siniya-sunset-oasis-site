@@ -1,5 +1,6 @@
 
 import { Bed, Infinity, Utensils, Sun, Waves } from 'lucide-react';
+import { ParallaxBackground } from './ui/ParallaxBackground';
 
 interface FeatureProps {
   icon: React.ReactNode;
@@ -22,9 +23,16 @@ const Feature = ({ icon, title, description }: FeatureProps) => {
 
 export const Features = () => {
   return (
-    <section className="py-20 bg-sunset-dark relative overflow-hidden">
-      {/* Enhanced Water-inspired background elements */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+    <section id="features" className="py-20 bg-sunset-dark relative overflow-hidden">
+      {/* Enhanced Water-inspired background elements with parallax */}
+      <ParallaxBackground 
+        className="z-5" 
+        backgroundImage="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=60" 
+        opacity={0.1}
+      />
+      
+      {/* Additional water effect */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none z-10">
         {Array.from({ length: 5 }).map((_, i) => (
           <div
             key={i}
@@ -39,11 +47,7 @@ export const Features = () => {
         ))}
       </div>
       
-      {/* Background image with opacity */}
-      <div className="absolute inset-0 bg-cover bg-center opacity-5" 
-           style={{backgroundImage: "url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=60')"}} />
-      
-      <div className="container-custom relative">
+      <div className="container-custom relative z-20">
         <div className="text-center mb-12 reveal">
           <h2 className="section-title text-transparent bg-clip-text bg-gradient-to-r from-white via-[#33C3F0] to-white">Experience Luxury Living</h2>
           <p className="section-subtitle mx-auto">
