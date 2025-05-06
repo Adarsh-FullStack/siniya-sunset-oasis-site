@@ -38,7 +38,7 @@ export const ParallaxBackground = ({ className }: ParallaxBackgroundProps) => {
       ref={backgroundRef}
       className={`absolute inset-0 z-0 transition-transform duration-300 ease-out ${className}`}
     >
-      {/* Particles */}
+      {/* Enhanced Particles */}
       <div className="absolute inset-0 overflow-hidden opacity-30">
         {Array.from({ length: 50 }).map((_, i) => (
           <div

@@ -9,13 +9,13 @@ interface FeatureProps {
 
 const Feature = ({ icon, title, description }: FeatureProps) => {
   return (
-    <div className="glass-card p-6 flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#33C3F0]/20 group">
+    <div className="glass-card underwater-card p-6 flex flex-col items-center text-center transform transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-[#33C3F0]/20 group">
       <div className="bg-gradient-to-br from-sunset-purple/20 to-[#33C3F0]/20 p-4 rounded-full mb-4 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-sunset-purple/40 group-hover:to-[#33C3F0]/40">
         {icon}
       </div>
       <h3 className="font-serif text-xl font-semibold text-white mb-2 group-hover:text-[#33C3F0] transition-colors duration-300">{title}</h3>
       <p className="text-sunset-light/70 text-sm transition-colors duration-300 group-hover:text-white/90">{description}</p>
-      <div className="mt-4 h-1 w-0 bg-gradient-to-r from-sunset-orange to-[#33C3F0] transition-all duration-300 group-hover:w-16 rounded-full"></div>
+      <div className="mt-4 h-1 w-0 bg-gradient-to-r from-sunset-orange to-[#33C3F0] transition-all duration-500 group-hover:w-16 rounded-full"></div>
     </div>
   );
 };
@@ -23,7 +23,7 @@ const Feature = ({ icon, title, description }: FeatureProps) => {
 export const Features = () => {
   return (
     <section className="py-20 bg-sunset-dark relative overflow-hidden">
-      {/* Water-inspired background elements */}
+      {/* Enhanced Water-inspired background elements */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         {Array.from({ length: 5 }).map((_, i) => (
           <div
@@ -38,6 +38,10 @@ export const Features = () => {
           />
         ))}
       </div>
+      
+      {/* Background image with opacity */}
+      <div className="absolute inset-0 bg-cover bg-center opacity-5" 
+           style={{backgroundImage: "url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=60')"}} />
       
       <div className="container-custom relative">
         <div className="text-center mb-12 reveal">

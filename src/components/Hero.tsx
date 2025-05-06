@@ -2,20 +2,28 @@
 import { ArrowRight, Waves } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ParallaxBackground } from './ui/ParallaxBackground';
+import { BubbleEffect } from './ui/BubbleEffect';
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background gradient with water-themed colors */}
+      {/* Enhanced water-themed background */}
       <div className="absolute inset-0 bg-gradient-to-br from-sunset-dark via-sunset-purple to-[#0EA5E9] bg-animate z-0" />
       
-      {/* Water-like overlay */}
+      {/* Animated wave pattern overlay */}
       <div className="absolute inset-0 opacity-30 z-10">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSI4IiBmaWxsPSJub25lIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIuMiIgc3Ryb2tlLXdpZHRoPSIuNSIgZD0iTTAgNCBTIDQgOCwgOCA0LCAxNiA4IiBmaWxsPSJub25lIiAvPjwvc3ZnPg==')] animate-gradient-x"></div>
       </div>
       
-      {/* Enhanced parallax effect */}
+      {/* Enhanced parallax background effect */}
       <ParallaxBackground className="z-20" />
+      
+      {/* New bubble animation effect */}
+      <BubbleEffect className="z-15" />
+      
+      {/* Enhanced image background */}
+      <div className="absolute inset-0 bg-cover bg-center opacity-10 z-5" 
+           style={{backgroundImage: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=60')"}} />
       
       {/* Enhanced content with animations */}
       <div className="container-custom relative z-30">
