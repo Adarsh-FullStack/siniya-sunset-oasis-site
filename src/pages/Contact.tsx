@@ -1,7 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { Layout } from '../components/Layout';
-import { Calendar, Mail, Phone, MapPin, Whatsapp } from 'lucide-react';
+import { Calendar, Mail, Phone, MapPin, WhatsApp } from 'lucide-react';
 import { useToast } from '../components/ui/use-toast';
 
 const Contact = () => {
@@ -175,7 +174,7 @@ const Contact = () => {
               </form>
             </div>
             
-            {/* Contact info */}
+            {/* Contact info section with WhatsApp icon */}
             <div className="reveal">
               <h2 className="font-serif text-2xl font-bold text-white mb-6">Get in Touch</h2>
               
@@ -204,7 +203,7 @@ const Contact = () => {
                   </div>
                   
                   <div className="flex items-start">
-                    <Whatsapp className="h-5 w-5 text-sunset-orange mr-3 flex-shrink-0" />
+                    <WhatsApp className="h-5 w-5 text-sunset-orange mr-3 flex-shrink-0" />
                     <div>
                       <p className="text-white">WhatsApp</p>
                       <a 
