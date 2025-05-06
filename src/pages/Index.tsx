@@ -6,17 +6,20 @@ import { PricingTeaser } from '../components/Pricing';
 
 const Index = () => {
   useEffect(() => {
-    // Scroll reveal animation
+    // Enhanced scroll reveal animation
     const handleScroll = () => {
       const reveals = document.querySelectorAll('.reveal');
       
-      reveals.forEach((reveal) => {
+      reveals.forEach((reveal, index) => {
         const windowHeight = window.innerHeight;
         const elementTop = reveal.getBoundingClientRect().top;
         const elementVisible = 150;
         
         if (elementTop < windowHeight - elementVisible) {
-          reveal.classList.add('active');
+          // Add staggered delay based on index
+          setTimeout(() => {
+            reveal.classList.add('active');
+          }, index * 100); // Staggered effect for multiple elements
         }
       });
     };
