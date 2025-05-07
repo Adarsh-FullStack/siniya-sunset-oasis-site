@@ -42,19 +42,22 @@ const Index = () => {
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   return (
     <div className="relative overflow-hidden">
       {/* Hero section with 3D component */}
-      <div className="relative">
+      <section id="hero" className="relative">
         <Hero />
         <div className="absolute top-0 right-0 w-full h-full z-10 pointer-events-none">
           <ThreeDIslandModel />
         </div>
-      </div>
+      </section>
       
       {/* Features section */}
-      <Features />
+      <section id="features" className="relative py-24">
+        <BubbleEffect colors={["rgba(14, 165, 233, 0.2)", "rgba(51, 195, 240, 0.1)"]} />
+        <Features />
+      </section>
       
       {/* Property Details section */}
       <section id="property-details" className="py-24 relative overflow-hidden">
@@ -63,7 +66,14 @@ const Index = () => {
       </section>
       
       {/* Amenities section */}
-      <Amenities />
+      <section id="amenities" className="relative py-24">
+        <ParallaxBackground 
+          className="z-5" 
+          backgroundImage="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1600&q=60" 
+          opacity={0.1}
+        />
+        <Amenities />
+      </section>
       
       {/* Enhanced Gallery section */}
       <section id="gallery" className="py-20 relative overflow-hidden">
@@ -78,22 +88,51 @@ const Index = () => {
       </section>
       
       {/* Testimonials */}
-      <Testimonials />
+      <section id="testimonials" className="relative">
+        <Testimonials />
+      </section>
       
       {/* Location section */}
-      <LocationSection />
+      <section id="location" className="relative py-24">
+        <BubbleEffect colors={["rgba(14, 165, 233, 0.15)", "rgba(51, 195, 240, 0.1)"]} />
+        <LocationSection />
+      </section>
       
       {/* Pricing section */}
-      <PricingTeaser />
+      <section id="pricing" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-sunset-dark to-[#0EA5E9]/10 z-0"></div>
+        <PricingTeaser />
+      </section>
       
       {/* FAQ section */}
-      <FAQ />
+      <section id="faq" className="py-24 relative">
+        <BubbleEffect colors={["rgba(14, 165, 233, 0.15)", "rgba(51, 195, 240, 0.1)"]} />
+        <FAQ />
+      </section>
       
       {/* Contact CTA */}
-      <ContactCTA />
+      <section id="contact-cta" className="relative">
+        <ContactCTA />
+      </section>
       
       {/* Wave Footer containing Footer component */}
       <WaveFooter />
+      
+      {/* Mouse interaction ripple effect */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-50"
+        onClick={(e) => {
+          const ripple = document.createElement('div');
+          ripple.className = 'ripple';
+          ripple.style.left = `${e.clientX}px`;
+          ripple.style.top = `${e.clientY}px`;
+          document.body.appendChild(ripple);
+          
+          setTimeout(() => {
+            document.body.removeChild(ripple);
+          }, 1500);
+        }}
+      />
     </div>
   );
 };
