@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Hero } from '../components/Hero';
 import { Features } from '../components/Features';
@@ -15,6 +14,7 @@ import { StorySection } from '../components/StorySection';
 import { EnhancedGallery } from '../components/EnhancedGallery';
 import { PropertyDetailsSection } from '../components/PropertyDetailsSection';
 import { ThreeDIslandModel } from '../components/ThreeDIslandModel';
+import { ParallaxBackground } from '../components/ui/ParallaxBackground';
 
 const Index = () => {
   useEffect(() => {
