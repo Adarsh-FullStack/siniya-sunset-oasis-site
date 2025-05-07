@@ -1,4 +1,6 @@
 
+import { Footer } from './Footer';
+
 export const WaveFooter = () => {
   return (
     <div className="relative bg-sunset-dark">
@@ -33,6 +35,9 @@ export const WaveFooter = () => {
           ></path>
         </svg>
       </div>
+      
+      {/* Add the Footer component inside the wave */}
+      <Footer />
     </div>
   );
 };
